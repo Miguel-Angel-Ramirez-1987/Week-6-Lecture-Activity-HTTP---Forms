@@ -1,45 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Week 6 Lecture Activity</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
+      <form>
+        Text:<input type="text" name="text" id="text" /><br />
+        Textarea:<textarea name="textarea" id="textarea"></textarea><br />
+        Password:<input type="password" name="password" id="password" /><br />
+        Checkbox:<input type="checkbox" name="checkbox" id="checkbox" /><br />
+        Radio:<input type="radio" name="radio" id="radio" /><br />
+        File:<input type="file" name="file" id="file" /><br />
+        Color:<input type="color" name="color" id="color" /><br />
+        <button>Submit</button>
+      </form>
 
-        <form>
-Text:<input type="text"name="text" id="text"><br>
-Textarea:<textarea name="textarea" id="textarea"></textarea><br>
-Password:<input type="password" name="password" id="password"><br>
-Checkbox:<input type="checkbox" name="checkbox" id="checkbox"><br>
-Radio:<input type="radio" name="radio" id="radio"><br>
-File:<input type="file" name="file" id="file"><br>
-Color:<input type="color" name="color" id="color"><br>
-    <button>Submit</button>
-</form>
+      <script>
+        let textInput = document.getElementById("textarea");
+        let colorInput = document.getElementById("color");
+        let form = document.querySelector("form");
 
-<script>
-let textInput = document.getElementById("textarea");
-let colorInput = document.getElementById("color");
-let form = document.querySelector("form");
+        form.addEventListener("submit", (event) => {
+          event.preventDefault();
+          console.log(textInput.value);
 
-form.addEventListener("submit", event => {
-event.preventDefault();
-console.log(textInput.value);
-
-localStorage.setItem("facoriteColor", colorInput.value);
-});
-</script>
-
-
-                    
+          localStorage.setItem("favoriteColor", colorInput.value);
+        });
+      </script>
     </header>
-    <main>
-         
-    </main>
-    <footer>
-         
-    </footer>
-</body>
+    <main></main>
+    <footer></footer>
+  </body>
 </html>
