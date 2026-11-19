@@ -7,28 +7,33 @@
 </head>
 <body>
     <header>
-        <form action="submit.html" method="post">
-             <div>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required><br><br>
-            </div>
-            <div>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required><br><br>
-            </div>
-            <div>
-                <label for="subject">Subject:</label>
-                <input type="text" id="subject" name="subject" required><br><br>
-            </div>               
-            <div>
-                <label for="message"> Message:</label><br>
-                <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
-            </div>
-            <div>
-                <input type="submit" value="Submit">
-                <input type="reset" value="Reset">  
-            </div>
-        </form>                 
+
+        <form>
+Text:<input type="text"name="text" id="text"><br>
+Textarea:<textarea name="textarea" id="textarea"></textarea><br>
+Password:<input type="password" name="password" id="password"><br>
+Checkbox:<input type="checkbox" name="checkbox" id="checkbox"><br>
+Radio:<input type="radio" name="radio" id="radio"><br>
+File:<input type="file" name="file" id="file"><br>
+Color:<input type="color" name="color" id="color"><br>
+    <button>Submit</button>
+</form>
+
+<script>
+let textInput = document.getElementById("textarea");
+let colorInput = document.getElementById("color");
+let form = document.querySelector("form");
+
+form.addEventListener("submit", event => {
+event.preventDefault();
+console.log(textInput.value);
+
+localStorage.setItem("facoriteColor", colorInput.value);
+});
+</script>
+
+
+                    
     </header>
     <main>
          
